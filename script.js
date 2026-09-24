@@ -55,7 +55,7 @@ function uppdateraKlocka() {
 
     // Visar öppet före kl. 18:00 i hero-note på sidans framsida, annars visas stängt.
     if (status) {
-        if (timme < 18) {
+        if (timme < 18 && timme > 10) {
             status.textContent = "Öppet – vi stänger kl. 18:00";
             statustext.textContent = "Välkommen in eller boka tid online";
         } else {
