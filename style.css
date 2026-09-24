@@ -3,12 +3,11 @@
     --ink: #171716;
     --paper: #f4f0e8;
     --paper-bright: #ffffff;
-    --copper-dark: #775034;
     --silver: #c6c0b6;
     --silver-dark: #a29c8f;
     --muted: #756f66;
     --line: #d6d0c6;
-    --nav-hover: #393733;
+    --nav-hover: #6e6b64;
     --black: #000000;
 
     --serif: Georgia, 'Times New Roman', serif;
@@ -65,28 +64,31 @@ h1, h2, h3 {
 }
 
 /* Meny */
-.site-header, .brand, .main-nav ul, .hero-actions {
+.site-header, .brand, .main-nav ul {
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 56px;
 }
 
 .site-header {
     position: sticky;
-    min-height: 78px;
+    top: 0;
+    z-index: 100;
+    max-height: 66px;
     padding: 12px;
     justify-content: space-between;
     flex-wrap: nowrap;
     background: var(--ink);
     color: var(--paper-bright);
+    box-shadow: 0px 0px 20px var(--ink);
 }
 
 .brand img {
-    width: 60px;
+    width: 70px;
 }
 
 .brand span, .main-nav a {
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .main-nav ul, .treatment-list {
@@ -105,7 +107,7 @@ h1, h2, h3 {
 }
 
 .main-nav a:hover, .main-nav a.active {
-    background: var(--nav-hover);
+    background: var(--silver-dark);
     border-radius: 20px;
 }
 
@@ -176,13 +178,14 @@ h1, h2, h3 {
 
 .hero, .split, .section-head, .visit-grid, .field-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Två likadana kolumner.*/
+    grid-template-columns: 1fr 1fr;
     gap: 32px;
     align-items: center;
 }
 
 .hero {
-    background: var(--paper-bright);
+    background: var(--paper);
+    box-shadow: inset 0 0 10px var(--black);
 }
 
 .hero-copy {
@@ -205,6 +208,7 @@ h1, h2, h3 {
 .map-card > img {
     border-radius: 12px;
     border: 2px solid var(--black);
+    box-shadow: 0px 0px 5px var(--black);
 }
 
 .hero-note, .map-card .button {
@@ -220,6 +224,7 @@ h1, h2, h3 {
     padding: 16px;
     background: var(--paper);
     color: var(--ink);
+    box-shadow: inset 0 0 8px var(--black);
 }
 
 .hero-note strong, .service-name strong, .service-name span {
@@ -230,7 +235,7 @@ h1, h2, h3 {
     overflow: hidden;
     color: var(--ink);
     background: var(--silver);
-    box-shadow: 0 0 20px rgba(0,0,0,1);
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .ticker-track {
@@ -241,13 +246,13 @@ h1, h2, h3 {
 }
 
 .ticker-track span {
-    padding-top: 14.4px;
+    padding-top: 14px;
     padding-right: 32px;
-    padding-bottom: 14.4px;
+    padding-bottom: 14px;
     padding-left: 32px;
-    font-size: 14.4px;
+    font-size: 14px;
     font-weight: 400;
-    letter-spacing: 5px;
+    letter-spacing: 3px;
     font-family: var(--sans);
     cursor: default;
 }
@@ -275,6 +280,7 @@ h1, h2, h3 {
     background: var(--paper-bright);
     overflow: hidden;
     transition: var(--smooth);
+    box-shadow: inset 0 0 10px var(--silver);
 }
 
 .value-card:hover {
@@ -312,13 +318,22 @@ h1, h2, h3 {
     border-bottom: 1px solid var(--line);
 }
 
-.treatment h3, .treatment p {
-    margin: 0;
+.treatment h3 {
+    margin: 10px;
+    font-weight: bold;
+    font-family: var(--sans);
+}
+
+.treatment p {
+    margin: 10px;
+    cursor: default;
+    font-family: var(--sans);
 }
 
 .treatment-price {
-    color: var(--copper-dark);
+    color: var(--ink);
     text-align: right;
+    cursor: default;
 }
 
 .treatment-action {
@@ -351,13 +366,13 @@ h1, h2, h3 {
 }
 
 .service-option:hover {
-    border-color: var(--silver-dark);
+    border-color: var(--ink);
 }
 
 .service-option input {
     width: 20px;
     height: 20px;
-    accent-color: var(--copper-dark);
+    accent-color: var(--silver);
 }
 
 .summary-row, .visit-row {
@@ -378,7 +393,7 @@ h1, h2, h3 {
 
 /* Kontakt och sidfot */
 .form-card {
-    max-width: 760px;
+    max-width: 768px;
     margin: auto;
 }
 
@@ -395,7 +410,7 @@ h1, h2, h3 {
     width: 100%;
     padding: 12px;
     border: 1px solid var(--silver-dark);
-    border-radius: 8px;
+    border-radius: 12px;
 }
 
 .field textarea {
@@ -407,14 +422,13 @@ h1, h2, h3 {
 }
 
 .site-footer {
-    margin-top: 32px;
-    padding-top: 32px;
-    padding-right: 0;
-    padding-bottom: 32px;
-    padding-left: 0;
+    margin-top: 64px;
+    padding-top: 16px;
+    padding-bottom: 16px;
     background: var(--ink);
     color: var(--silver);
     cursor: default;
+    box-shadow: inset 0 0 12px var(--silver-dark);
 }
 
 .footer-inner {
@@ -434,6 +448,7 @@ h1, h2, h3 {
     padding-top: 16px;
     border-top: 1px solid var(--muted);
     font-size: 13px;
+    font-weight: bold;
     margin-top: 40px;
     cursor: default;
 }
