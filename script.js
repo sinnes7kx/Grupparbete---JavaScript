@@ -46,6 +46,7 @@ function uppdateraKlocka() {
     var timme = nu.getHours();
     var klocka = document.getElementById("klocka");
     var status = document.getElementById("oppet-status");
+    var statustext = document.getElementById("status-text");
 
     // Visa lokala tiden som hämtas från användarens dator.
     if (klocka) {
@@ -56,8 +57,10 @@ function uppdateraKlocka() {
     if (status) {
         if (timme < 18) {
             status.textContent = "Öppet – vi stänger kl. 18:00";
+            statustext.textContent = "Välkommen in eller boka tid online";
         } else {
             status.textContent = "Stängt, vi öppnar kl. 10.00";
+            statustext.textContent = "Välkommen att boka tid online";
         }
     }
 }
