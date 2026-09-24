@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="sv">
+<head>
+
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>HÅR Stockholm — Klippning, färg & styling</title>
+
+  <meta name="description" content="Personlig hårvård i Stockholm. Klippning, färg, slingor och styling av erfarna frisörer.">
+
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+
+<script type="application/ld+json">
+    {
+    "@context":"https://schema.org",
+    "@type":"HairSalon", 
+    "name":"HÅR Stockholm",
+    "address":{
+        "@type":"PostalAddress",
+        "streetAddress":"Storgatan 12",
+        "addressLocality":"Stockholm",
+        "addressCountry":"SE"},
+    "openingHours":[
+    "Mo-Fr 10:00-19:00",
+    "Sa 10:00-15:00"] 
+    }
+</script>
+
+</head>
+
+<body>
+
+  <header class="site-header">
+    <a class="brand" href="index.html">
+      <img src="images/s1.png" alt="">
+      <span>HÅR / STOCKHOLM
+
+      </span></a>
+
+    <nav class="main-nav" id="main-nav" aria-label="Huvudmeny">
+      <ul><li><a href="index.html">Hem</a></li>
+        <li><a href="omoss.html">Om oss</a></li>
+        <li><a href="contact.html">Kontakt</a></li>
+      </ul>
+    </nav>
+
+    <a class="header-book" href="bokning.html">Boka tid</a>
+
+    <button class="menu-toggle" id="menyknapp" type="button" onclick="visaMeny()">Meny</button>
+
+  </header>
+
+<body>
+    <section class="section" id="behandlingar">
+
+    <!-- Sektionens rubrik -->
+
+    <div class="section-head">
+        <div>
+            <p class="eyebrow">
+                Våra behandlingar
+            </p>
+
+            <h2 class="section-title">
+                Din stil, vår precision.
+            </h2>
+        </div>
+
+        <p class="lead">
+            Välj bland klippning, färg och styling.<br>
+            Alla behandlingar anpassas efter dig och ditt hår.
+        </p>
+    </div>
+
+
+    <!-- Lista över behandlingar -->
+
+    <ul class="treatment-list">
+
+        <li class="treatment">
+            <div>
+                <h3>Damklippning</h3>
+                <p>Klippning och personlig konsultation.</p>
+            </div>
+
+            <span class="treatment-time">60 min</span>
+            <strong class="treatment-price">650 kr</strong>
+        </li>
+
+        <li class="treatment">
+            <div>
+                <h3>Herrklippning</h3>
+                <p>Klippning anpassad efter hårtyp och önskad stil.</p>
+            </div>
+
+            <span class="treatment-time">45 min</span>
+            <strong class="treatment-price">450 kr</strong>
+        </li>
+
+        <li class="treatment">
+            <div>
+                <h3>Barnklippning</h3>
+                <p>Klippning för barn i en lugn och trygg miljö.</p>
+            </div>
+
+            <span class="treatment-time">30 min</span>
+            <strong class="treatment-price">350 kr</strong>
+        </li>
+
+        <li class="treatment">
+            <div>
+                <h3>Tvätt &      fön</h3>
+                <p>Hårtvätt och professionell föning.</p>
+            </div>
+
+            <span class="treatment-time">30 min</span>
+            <strong class="treatment-price">350 kr</strong>
+        </li>
+
+        <li class="treatment">
+            <div>
+                <h3>Klipp & färg</h3>
+                <p>Klippning kombinerad med en anpassad färgbehandling.</p>
+            </div>
+
+            <span class="treatment-time">120 min</span>
+            <strong class="treatment-price">1 450 kr</strong>
+        </li>
+
+        <li class="treatment">
+            <div>
+                <h3>Slingor</h3>
+                <p>Slingor som skapar ljus, djup och naturliga skiftningar.</p>
+            </div>
+
+            <span class="treatment-time">150 min</span>
+            <strong class="treatment-price">fr. 1 600 kr</strong>
+        </li>
+
+        <li class="treatment">
+            <div>
+                <h3>Balayage</h3>
+                <p>Handmålad färg för ett mjukt och naturligt resultat.</p>
+            </div>
+
+            <span class="treatment-time">180 min</span>
+            <strong class="treatment-price">fr. 2 100 kr</strong>
+        </li>
+
+        <li class="treatment">
+            <div>
+                <h3>Toning</h3>
+                <p>Uppfräschning av färg, ton och glans.</p>
+            </div>
+
+            <span class="treatment-time">60 min</span>
+            <strong class="treatment-price">850 kr</strong>
+        </li>
+
+        <li class="treatment">
+            <div>
+                <h3>Skäggtrimning</h3>
+                <p>Formning och trimning av skägg.</p>
+            </div>
+
+            <span class="treatment-time">20 min</span>
+            <strong class="treatment-price">250 kr</strong>
+        </li>
+
+    </ul>
+
+
+    <!-- Länk till bokningssidan -->
+
+    <div class="treatment-action">
+        <a class="button" href="bokning.html">Boka en behandling</a>
+    </div>
+
+</section>
+
+  <footer class="site-footer">
+
+    <div class="footer-inner">
+
+        <div>
+
+            <strong>HÅR Stockholm</strong>
+            <p>Storgatan 12 · 123 45 Stockholm</p>
+            
+        </div>
+
+      <!-- JavaScript uppdateras från datorns tid för att kolla om salongen har öppet -->
+
+    <div class="footer-copy"><p id="klocka" style="text-align: center;"></p>© 2026 HÅR Stockholm.</div>
+  
+  </div>
+
+</footer>
+
+</body>
+</html>

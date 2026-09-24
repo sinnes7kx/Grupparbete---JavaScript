@@ -1,0 +1,299 @@
+<!doctype html>
+
+<html lang="sv">
+<head>
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Boka tid — HÅR Stockholm</title>
+
+    <meta name="description" content="Välj behandling och påbörja din bokning hos HÅR Stockholm.">
+
+    <link rel="icon" href="images/favicon.png">
+    <link rel="stylesheet" href="style.css">
+
+    <script src="script.js" defer></script>
+
+    <script type="application/ld+json">
+    {
+    "@context":"https://schema.org",
+    "@type":"HairSalon", 
+    "name":"HÅR Stockholm",
+    "address":{
+        "@type":"PostalAddress",
+        "streetAddress":"Storgatan 12",
+        "addressLocality":"Stockholm",
+        "addressCountry":"SE"},
+    "openingHours":[
+    "Mo-Fr 10:00-19:00",
+    "Sa 10:00-15:00"] 
+    }
+</script>
+
+</head>
+
+<body>
+
+    <!-- Sidhuvud -->
+
+    <header class="site-header">
+
+        <!-- Logotyp -->
+
+        <a class="brand" href="index.html">
+            <img src="images/s1.png" alt="saxlogo">
+            <span>HÅR / STOCKHOLM</span>
+        </a>
+
+
+        <!-- Huvudmeny -->
+
+        <nav class="main-nav" id="main-nav">
+
+            <ul>
+                <li><a href="index.html">Hem</a></li>
+                <li><a href="omoss.html">Om oss</a></li>
+                <li><a href="contact.html">Kontakt</a></li>
+            </ul>
+        </nav>
+
+        <!-- Bokningslänk -->
+
+        <a class="header-book" href="bokning.html">Boka tid</a>
+
+        <!-- Knapp för mobilmenyn -->
+
+        <button class="menu-toggle" id="menyknapp" type="button" onclick="visaMeny()">Meny</button>
+
+    </header>
+
+
+    <!-- Sidans huvudinnehåll -->
+
+    <main id="main">
+
+        <!-- Introduktion -->
+
+        <header class="page-hero">
+            <p class="eyebrow">Boka tid</p>
+
+            <h1 class="display">Vad vill du
+                <br>
+                <em>göra idag?</em>
+            </h1>
+
+            <p class="lead">Välj behandling så sammanfattar vi ditt val. Priser för färgbehandlingar kan justeras efter hårlängd och materialåtgång.</p>
+        </header>
+
+
+        <!-- Bokningsformulär -->
+
+        <section class="section" style="padding-top: 0">
+            <form class="booking-shell" onsubmit="return kontrolleraBokning()">
+
+                <!-- Lista med behandlingar -->
+
+                <div class="booking-list">
+
+                    <!-- Damklippning -->
+
+                    <label class="service-option">
+                        <input type="radio" onclick="valjBehandling('Damklippning', '650 kr')" name="service" value="damklippning">
+
+                        <span class="service-name">
+                            <strong>Damklippning</strong>
+                            <span>60 min</span>
+                        </span>
+
+                        <span class="service-price">
+                            650 kr
+                        </span>
+                    </label>
+
+                    <!-- Herrklippning -->
+
+                    <label class="service-option">
+                        <input type="radio" onclick="valjBehandling('Herrklippning', '450 kr')" name="service" value="herrklippning">
+
+                        <span class="service-name">
+                            <strong>Herrklippning</strong>
+                            <span>45 min</span>
+                        </span>
+
+                        <span class="service-price">
+                            450 kr
+                        </span>
+                    </label>
+
+                    <!-- Barnklippning -->
+
+                    <label class="service-option">
+                        <input type="radio" onclick="valjBehandling('Barnklippning', '350 kr')" name="service" value="barn">
+
+                        <span class="service-name">
+                            <strong>Barnklippning</strong>
+                            <span>30 min</span>
+                        </span>
+
+                        <span class="service-price">
+                            350 kr
+                        </span>
+                    </label>
+
+                    <!-- Tvätt och fön -->
+
+                    <label class="service-option">
+                        <input type="radio" onclick="valjBehandling('Tvätt &amp; fön', '350 kr')" name="service" value="tvatt">
+
+                        <span class="service-name">
+                            <strong>Tvätt & fön</strong>
+                            <span>30 min</span>
+                        </span>
+
+                        <span class="service-price">
+                            350 kr
+                        </span>
+                    </label>
+
+                    <!-- Klippning och färg -->
+
+                    <label class="service-option">
+                        <input type="radio" onclick="valjBehandling('Klipp &amp; färg', '1 450 kr')" name="service" value="farg">
+
+                        <span class="service-name">
+                            <strong>Klipp & färg</strong>
+                            <span>120 min</span>
+                        </span>
+
+                        <span class="service-price">
+                            1450 kr
+                        </span>
+                    </label>
+
+                    <!-- Slingor -->
+
+                    <label class="service-option">
+                        <input type="radio" onclick="valjBehandling('Slingor', 'fr. 1 600 kr')" name="service" value="slingor">
+
+                        <span class="service-name">
+                            <strong>Slingor</strong>
+                            <span>150 min</span>
+                        </span>
+
+                        <span class="service-price">
+                            fr. 1600 kr
+                        </span>
+                    </label>
+
+                    <!-- Balayage -->
+
+                    <label class="service-option">
+                        <input type="radio" onclick="valjBehandling('Balayage', 'fr. 2 100 kr')" name="service" value="balayage">
+
+                        <span class="service-name">
+                            <strong>Balayage</strong>
+                            <span>180 min</span>
+                        </span>
+
+                        <span class="service-price">
+                            fr. 2100 kr
+                        </span>
+                    </label>
+
+                    <!-- Toning -->
+
+                    <label class="service-option">
+                        <input type="radio" onclick="valjBehandling('Toning', '850 kr')" name="service" value="toning">
+
+                        <span class="service-name">
+                            <strong>Toning</strong>
+                            <span>60 min</span>
+                        </span>
+
+                        <span class="service-price">
+                            850 kr
+                        </span>
+                    </label>
+
+                    <!-- Skäggtrimning -->
+
+                    <label class="service-option">
+                        <input type="radio" onclick="valjBehandling('Skäggtrimning', '250 kr')" name="service" value="skagg">
+
+                        <span class="service-name">
+                            <strong>Skäggtrimning</strong>
+                            <span>20 min</span>
+                        </span>
+
+                        <span class="service-price">
+                            250 kr
+                        </span>
+                    </label>
+
+                </div>
+
+                <!-- Sammanfattning av bokningen -->
+
+                <aside class="booking-summary">
+                    <p class="eyebrow">Din bokning</p>
+
+                    <h2>Sammanfattning</h2>
+
+                    <!-- Vald behandling -->
+
+                    <div class="summary-row">
+                        <span>Behandling</span>
+
+                        <strong id="vald-behandling">Inte vald</strong> <!-- id för JavaScript-->
+                    </div>
+
+                    <!-- Pris -->
+
+                    <div class="summary-row">
+                        <span>Pris</span>
+
+                        <strong id="valt-pris">-</strong>
+                    </div>
+
+                    <!-- Fortsättningsknapp -->
+
+                    <button
+                        class="button light"
+                        type="submit"
+                    >
+                        Fortsätt
+                    </button>
+
+
+                    <!-- Meddelande från JavaScript -->
+
+                    <p class="booking-message"id="bokningsmeddelande"></p>
+
+                </aside>
+
+            </form>
+        </section>
+
+    </main>
+
+
+    <!-- Sidfot -->
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+
+      <div>
+        <strong>HÅR Stockholm</strong>
+        <p>Storgatan 12 · 123 45 Stockholm</p>
+      </div>
+
+      <!-- JavaScript uppdateras från datorns tid för att kolla om salongen har öppet -->
+
+    <div class="footer-copy"><p id="klocka" style="text-align: center;"></p>© 2026 HÅR Stockholm.</div>
+  
+  </div>
+</footer>
+
+</body>
+</html>

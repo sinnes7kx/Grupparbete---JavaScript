@@ -1,0 +1,516 @@
+/* Variabler */
+:root {
+    --ink: #171716;
+    --paper: #f4f0e8;
+    --paper-bright: #ffffff;
+    --copper-dark: #775034;
+    --silver: #c6c0b6;
+    --silver-dark: #a29c8f;
+    --muted: #756f66;
+    --line: #d6d0c6;
+    --nav-hover: #393733;
+    --black: #000000;
+
+    --serif: Georgia, 'Times New Roman', serif;
+    --sans: ui-sans-serif, 'Segoe UI', sans-serif;
+    --body-font: Arial, sans-serif;
+
+    --smooth: .66s ease;
+}
+
+/* Grundstil */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--body-font);
+    font-size: 16px;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button, input, textarea {
+    font: inherit;
+}
+
+h1, h2, h3 {
+    font-family: var(--serif);
+    font-weight: normal;
+    cursor: default;
+}
+
+.section, .page-hero, .footer-inner {
+    width: 92%;
+    max-width: 1180px;
+    margin: auto;
+}
+
+.section, .page-hero {
+    padding-top: 40px;
+    padding-right: 10px;
+    padding-bottom: 40px;
+    padding-left: 10px;
+}
+
+/* Meny */
+.site-header, .brand, .main-nav ul, .hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.site-header {
+    position: sticky;
+    min-height: 78px;
+    padding: 12px;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    background: var(--ink);
+    color: var(--paper-bright);
+}
+
+.brand img {
+    width: 60px;
+}
+
+.brand span, .main-nav a {
+    font-size: 14px;
+}
+
+.main-nav ul, .treatment-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.main-nav a {
+    display: block;
+    padding-top: 8px;
+    padding-right: 12px;
+    padding-bottom: 8px;
+    padding-left: 12px;
+    transition: var(--smooth);
+}
+
+.main-nav a:hover, .main-nav a.active {
+    background: var(--nav-hover);
+    border-radius: 20px;
+}
+
+.button, .header-book {
+    display: inline-block;
+    padding-top: 12px;
+    padding-right: 20px;
+    padding-bottom: 12px;
+    padding-left: 20px;
+    border: 1px solid var(--silver-dark);
+    border-radius: 25px;
+    background: var(--ink);
+    color: var(--paper-bright);
+    cursor: pointer;
+    text-align: center;
+    transition: var(--smooth);
+}
+
+.button:hover, .header-book:hover {
+    background: var(--muted);
+    color: var(--paper-bright);
+}
+
+.button.light, .button.outline {
+    background: var(--paper-bright);
+    color: var(--ink);
+}
+
+.menu-toggle {
+    display: none;
+    border: 0;
+    background: none;
+    color: var(--paper-bright);
+    cursor: pointer;
+}
+
+/* Rubriker och startsida */
+.display {
+    margin: 0;
+    font-size: 80px;
+    line-height: 1.1;
+    text-align: center;
+}
+
+.display em, .eyebrow, .copy p, .value-card p, .service-name span, .treatment-time {
+    color: var(--muted);
+}
+
+.eyebrow {
+    font-size: 20px;
+    text-transform: uppercase;
+    cursor: default;
+}
+
+.lead {
+    max-width: 600px;
+    margin-top: 24px;
+    margin-right: auto;
+    margin-bottom: 24px;
+    margin-left: auto;
+    color: var(--muted);
+    text-align: center;
+}
+
+.section-title, .copy h2 {
+    font-size: 40px;
+}
+
+.hero, .split, .section-head, .visit-grid, .field-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Två likadana kolumner.*/
+    gap: 32px;
+    align-items: center;
+}
+
+.hero {
+    background: var(--paper-bright);
+}
+
+.hero-copy {
+    padding: 60px;
+}
+
+.hero-visual, .map-card {
+    position: relative;
+    align-self: stretch;
+    min-height: 300px;
+}
+
+.hero-visual > img, .map-card > img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.map-card > img {
+    border-radius: 12px;
+    border: 2px solid var(--black);
+}
+
+.hero-note, .map-card .button {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    border-radius: 12px;
+}
+
+.hero-note {
+    max-width: 280px;
+    margin-right: 20px;
+    padding: 16px;
+    background: var(--paper);
+    color: var(--ink);
+}
+
+.hero-note strong, .service-name strong, .service-name span {
+    display: block;
+}
+
+.ticker {
+    overflow: hidden;
+    color: var(--ink);
+    background: var(--silver);
+    box-shadow: 0 0 20px rgba(0,0,0,1);
+}
+
+.ticker-track {
+    display: flex;
+    width: max-content;
+    padding-left: 100%; /* Börjar från höger sida */
+    animation: ticker 24s linear infinite;
+}
+
+.ticker-track span {
+    padding-top: 14.4px;
+    padding-right: 32px;
+    padding-bottom: 14.4px;
+    padding-left: 32px;
+    font-size: 14.4px;
+    font-weight: 400;
+    letter-spacing: 5px;
+    font-family: var(--sans);
+    cursor: default;
+}
+
+@keyframes ticker {
+    from {
+        transform: translateX(0); /* Loopar om när texten åkt hela vägen till vänster */
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+/* Kort, bilder och information */
+.values-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+}
+
+.value-card, .visit-card, .booking-summary, .form-card {
+    padding: 24px;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    background: var(--paper-bright);
+    overflow: hidden;
+    transition: var(--smooth);
+}
+
+.value-card:hover {
+    transform: translateY(-5px)
+}
+
+.visit-card, .booking-summary {
+    background: var(--ink);
+    color: var(--paper-bright);
+}
+
+.portrait {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 2px solid var(--black);
+    transition: var(--smooth)
+}
+
+.portrait:hover {
+    transform: translateY(-5px);
+}
+
+/* Behandlingar och bokning */
+.treatment {
+    display: grid;
+    grid-template-columns: 1fr 100px 140px;
+    gap: 16px;
+    align-items: center;
+    padding-top: 20px;
+    padding-right: 0;
+    padding-bottom: 20px;
+    padding-left: 0;
+    border-bottom: 1px solid var(--line);
+}
+
+.treatment h3, .treatment p {
+    margin: 0;
+}
+
+.treatment-price {
+    color: var(--copper-dark);
+    text-align: right;
+}
+
+.treatment-action {
+    margin-top: 24px;
+    margin-right: 0;
+    margin-bottom: 24px;
+    margin-left: 0;
+    text-align: center;
+}
+
+.booking-shell {
+    display: grid;
+    grid-template-columns: 1fr 330px;
+    gap: 24px;
+    align-items: start;
+}
+
+.service-option {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 16px;
+    align-items: center;
+    margin-bottom: 12px;
+    padding: 16px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: var(--paper-bright);
+    cursor: pointer;
+    transition: var(--smooth);
+}
+
+.service-option:hover {
+    border-color: var(--silver-dark);
+}
+
+.service-option input {
+    width: 20px;
+    height: 20px;
+    accent-color: var(--copper-dark);
+}
+
+.summary-row, .visit-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    padding-top: 12px;
+    padding-right: 0;
+    padding-bottom: 12px;
+    padding-left: 0;
+    border-bottom: 1px solid var(--muted);
+}
+
+.booking-summary .button {
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* Kontakt och sidfot */
+.form-card {
+    max-width: 760px;
+    margin: auto;
+}
+
+.field {
+    margin-bottom: 16px;
+}
+
+.field label {
+    display: block;
+    margin-bottom: 6px;
+}
+
+.field input, .field textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--silver-dark);
+    border-radius: 8px;
+}
+
+.field textarea {
+    resize: none;
+}
+
+.form-status, .booking-message {
+    min-height: 24px;
+}
+
+.site-footer {
+    margin-top: 32px;
+    padding-top: 32px;
+    padding-right: 0;
+    padding-bottom: 32px;
+    padding-left: 0;
+    background: var(--ink);
+    color: var(--silver);
+    cursor: default;
+}
+
+.footer-inner {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 24px;
+}
+
+.footer-inner strong {
+    color: var(--silver);
+    font-size: 22px;
+    font-weight: 200;
+    cursor: default;
+}
+
+.footer-copy {
+    padding-top: 16px;
+    border-top: 1px solid var(--muted);
+    font-size: 13px;
+    margin-top: 40px;
+    cursor: default;
+}
+
+/* Mobil och surfplatta */
+
+@media (max-width: 1000px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .header-book, .main-nav {
+        display: none;
+    }
+
+    .main-nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--ink);
+    }
+
+    .main-nav ul {
+        display: block;
+        padding: 16px;
+    }
+
+    .hero, .split, .section-head, .visit-grid, .booking-shell {
+        grid-template-columns: 1fr;
+    }
+
+    .display {
+        font-size: 60px;
+    }
+}
+
+@media (max-width: 700px) {
+    .values-grid, .field-grid, .footer-inner {
+        grid-template-columns: 1fr;
+    }
+
+    .display {
+        font-size: 48px;
+    }
+
+    .section-title, .copy h2 {
+        font-size: 32px;
+    }
+
+    .hero-copy {
+        padding-top: 40px;
+        padding-right: 20px;
+        padding-bottom: 40px;
+        padding-left: 20px;
+    }
+
+    .treatment, .service-option {
+        grid-template-columns: auto 1fr;
+    }
+
+    .treatment > div {
+        /* Börja i första kolumnen och täck båda kolumnerna. */
+        grid-column-start: 1;
+        grid-column-end: span 2;
+    }
+
+    .service-price {
+        /* Placera priset i andra kolumnen. */
+        grid-column-start: 2;
+    }
+
+    .hero-visual, .map-card {
+        min-height: 360px;
+    }
+
+    .portrait {
+        height: 360px;
+    }
+}

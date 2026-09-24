@@ -1,0 +1,189 @@
+<!doctype html>
+
+<html lang="sv">
+<head>
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Kontakt — HÅR Stockholm</title>
+
+    <meta name="description" content="Kontakta HÅR Stockholm med frågor om behandlingar, produkter eller bokning.">
+
+    <link rel="icon" href="images/favicon.png">
+    <link rel="stylesheet" href="style.css">
+
+    <script src="script.js" defer></script>
+
+    <script type="application/ld+json">
+    {
+    "@context":"https://schema.org",
+    "@type":"HairSalon", 
+    "name":"HÅR Stockholm",
+    "address":{
+        "@type":"PostalAddress",
+        "streetAddress":"Storgatan 12",
+        "addressLocality":"Stockholm",
+        "addressCountry":"SE"},
+    "openingHours":[
+    "Mo-Fr 10:00-19:00",
+    "Sa 10:00-15:00"] 
+    }
+</script>
+    
+</head>
+
+<body>
+
+    <!-- Sidhuvud -->
+
+    <header class="site-header">
+
+        <!-- Logotyp -->
+
+        <a class="brand" href="index.html">
+            <img src="images/s1.png" alt="saxlogo">
+            <span>HÅR / STOCKHOLM</span>
+        </a>
+
+
+        <!-- Huvudmeny -->
+
+        <nav class="main-nav" id="main-nav" aria-label="Huvudmeny">
+
+            <ul>
+                <li><a href="index.html">Hem</a></li>
+                <li><a href="omoss.html">Om oss</a></li>
+                <li><a class="active" href="contact.html">Kontakt</a></li>
+            </ul>
+        </nav>
+
+
+        <!-- Bokningsknapp -->
+
+        <a class="header-book" href="bokning.html">Boka tid</a>
+
+        <!-- Knapp för mobilmenyn -->
+
+        <button class="menu-toggle" id="menyknapp" type="button" aria-controls="main-nav" onclick="visaMeny()">Meny</button>
+
+    </header>
+
+
+    <!-- Sidans huvudinnehåll -->
+
+    <main id="main">
+
+        <!-- Introduktion -->
+
+        <header class="page-hero">
+            <p class="eyebrow">
+                Kontakta oss
+            </p>
+
+            <h1 class="display">
+                Vi lyssnar<br>
+                <em>gärna.</em>
+            </h1>
+
+            <p class="lead">
+                Har du en fråga om ditt hår, en behandling
+                eller din bokning? <br>Skriv till oss så återkommer
+                vi så snart vi kan.
+            </p>
+        </header>
+
+
+        <!-- Kontaktformulär -->
+
+        <section class="section" style="padding-top: 0">
+            <form class="form-card" onsubmit="return skickaMeddelande()">
+
+                <!-- Namn och e-post -->
+
+                <div class="field-grid">
+
+                    <!-- Namn -->
+
+                    <div class="field">
+                        <label for="name">
+                            Namn
+                        </label>
+
+                        <input
+                            id="name"
+                            type="text"
+                            name="name"
+                            autocomplete="name"
+                            placeholder="Ditt namn"
+                            required>
+                    </div>
+
+
+                    <!-- E-post -->
+
+                    <div class="field">
+
+                        <label for="email">E-post</label>
+
+                        <input
+                            id="email"
+                            type="email"
+                            name="email"
+                            autocomplete="email"
+                            placeholder="namn@exempel.se"
+                            required>
+                    </div>
+
+                </div>
+
+
+                <!-- Meddelande -->
+
+                <div class="field">
+                    
+                    <label for="message">Meddelande</label>
+
+                    <textarea
+                        id="message"
+                        name="message"
+                        rows="7"
+                        placeholder="Vad kan vi hjälpa dig med?"
+                        required>
+                    </textarea>
+
+                </div>
+
+                <!-- Skicka meddelande-knapp -->
+
+                <button class="button" type="submit">Skicka meddelande</button>
+
+                <!-- Statusmeddelande från JavaScript -->
+
+                <p class="form-status" id="kontaktmeddelande"></p>
+
+            </form>
+        </section>
+
+    </main>
+
+
+    <!-- Sidfot -->
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+
+      <div>
+        <strong>HÅR Stockholm</strong>
+        <p>Storgatan 12 · 123 45 Stockholm</p>
+      </div>
+
+      <!-- JavaScript uppdateras från datorns tid för att kolla om salongen har öppet -->
+
+    <div class="footer-copy"><p id="klocka" style="text-align: center;"></p>© 2026 HÅR Stockholm.</div>
+  
+  </div>
+</footer>
+
+</body>
+</html>

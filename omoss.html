@@ -1,0 +1,182 @@
+<!doctype html>
+
+<html lang="sv">
+<head>
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Om oss — HÅR Stockholm</title>
+
+    <meta name="description" content="Möt frisörerna bakom HÅR Stockholm och läs om vår syn på personligt hantverk.">
+
+    <link rel="icon" href="images/favicon.png">
+    <link rel="stylesheet" href="style.css">
+
+    <script src="script.js"></script>
+
+    <script type="application/ld+json">
+    {
+    "@context":"https://schema.org",
+    "@type":"HairSalon", 
+    "name":"HÅR Stockholm",
+    "address":{
+        "@type":"PostalAddress",
+        "streetAddress":"Storgatan 12",
+        "addressLocality":"Stockholm",
+        "addressCountry":"SE"},
+    "openingHours":[
+    "Mo-Fr 10:00-19:00",
+    "Sa 10:00-15:00"] 
+    }
+</script>
+
+</head>
+
+<body>
+
+    <!-- Sidhuvud -->
+
+    <header class="site-header">
+
+        <!-- Logotyp -->
+
+        <a class="brand" href="index.html">
+            <img src="images/s1.png" alt="">
+            <span>HÅR / STOCKHOLM</span>
+        </a>
+
+        <!-- Huvudmeny -->
+
+        <nav class="main-nav" id="main-nav">
+            <ul>
+                <li><a href="index.html">Hem</a></li>
+                <li><a class="active" href="omoss.html">Om oss</a></li>
+                <li><a href="contact.html">Kontakt</a></li>
+            </ul>
+        </nav>
+
+
+        <!-- Bokningsknapp -->
+
+        <a class="header-book" href="bokning.html">Boka tid</a>
+
+        <!-- Knapp för mobilmenyn -->
+
+        <button class="menu-toggle" id="menyknapp" type="button" onclick="visaMeny()">Meny</button>
+
+    </header>
+
+
+    <!-- Sidans huvudinnehåll -->
+
+    <main id="main">
+
+        <!-- Introduktion -->
+
+        <header class="page-hero">
+
+            <p class="eyebrow">Om salongen</p>
+
+            <h1 class="display">Personlig<br><em>service.</em></h1>
+
+            <p class="lead">Vi skapar frisyrer som känns som du — med lugn konsultation, gedigen kunskap och ett öga fördetaljer.</p>
+        </header>
+
+        <!-- Salongen och vår filosofi -->
+
+        <section class="section split">
+
+            <!-- Bild från salongen -->
+
+            <img class="portrait" src="images/salon.jpeg" alt="Ljus och modern frisörsalong">
+
+            <!-- Text om salongen -->
+
+            <div class="copy">
+                <p class="eyebrow">Vår filosofi</p>
+
+                <h2>Du ska känna dig sedd.</h2>
+
+                <p>En riktigt bra behandling börjar med att lyssna. Vi tar tid att förstå ditt hår, din vardag och vilket uttryck du vill ha.</p>
+
+                <p>Med många års erfarenhet och professionella produkter skapar vi en form som fungerar även när du lämnat salongen.</p>
+            </div>
+
+        </section>
+
+
+        <!-- Våra principer -->
+
+        <section class="section">
+
+            <!-- Rubrik -->
+
+            <div class="section-head">
+                <div>
+                    <p class="eyebrow">Det vi står för</p>
+
+                    <h2 class="section-title" style="text-align:center;":>Tre enkla principer.</h2>
+                </div>
+            </div>
+
+            <!-- Kort med principer -->
+
+            <div class="values-grid">
+
+                <!-- Erfarenhet -->
+
+                <article class="value-card">
+                    
+                    <h3>Erfarenhet</h3>
+
+                    <p>Över 20 års samlad kunskap inom klippning, färg och hårvård.</p>
+
+                </article>
+
+
+                <!-- Kvalitet -->
+
+                <article class="value-card">
+                   
+                    <h3>Kvalitet</h3>
+
+                    <p>Noga utvalda produkter och ett detaljerat hantverk</p>
+
+                </article>
+
+                <!-- Personlig service -->
+
+                <article class="value-card">
+                    
+                    <h3>Personlig service</h3>
+
+                    <p>Varje behandling anpassas efter ditt hår, dina önskemål och din vardag.</p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Sidfot -->
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+
+      <div>
+        <strong>HÅR Stockholm</strong>
+        <p>Storgatan 12 · 123 45 Stockholm</p>
+      </div>
+
+      <!-- JavaScript uppdateras från datorns tid för att kolla om salongen har öppet -->
+
+    <div class="footer-copy"><p id="klocka" style="text-align: center;"></p>© 2026 HÅR Stockholm.</div>
+  
+  </div>
+</footer>
+
+</body>
+</html>

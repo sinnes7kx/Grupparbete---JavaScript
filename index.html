@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>HÅR Stockholm — Klippning, färg & styling</title>
+
+  <meta name="description" content="Personlig hårvård i Stockholm. Klippning, färg, slingor och styling av erfarna frisörer.">
+
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="stylesheet" href="style.css">
+
+<script src="script.js"></script>
+
+<script type="application/ld+json">
+  {
+  "@context":"https://schema.org",
+  "@type":"HairSalon",
+  "name":"HÅR Stockholm","address":{"@type":"PostalAddress",
+  "streetAddress":"Storgatan 12",
+  "addressLocality":"Stockholm",
+  "addressCountry":"SE"},"openingHours":["Mo-Fr 10:00-18:00",
+  "Sa 10:00-18:00"]
+  }
+</script>
+
+</head>
+
+<body>
+
+  <header class="site-header">
+    <a class="brand" href="index.html">
+      <img src="images/s1.png" alt="saxlogo">
+      <span>HÅR / STOCKHOLM</span></a>
+
+    <nav class="main-nav" id="main-nav">
+      <ul>
+        <li><a class="active" href="index.html">Hem</a></li>
+        <li><a href="omoss.html">Om oss</a></li>
+        <li><a href="contact.html">Kontakt</a></li>
+      </ul>
+    </nav>
+
+    <a class="header-book" href="bokning.html">Boka tid</a>
+
+    <button class="menu-toggle" id="menyknapp" type="button" onclick="visaMeny()">Meny</button>
+
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Storgatan 12 · Stockholm</p>
+        <h1 class="display">Hår med<br><em>karaktär.</em></h1>
+        <p class="lead">Klippning, färg och styling som utgår från dig — utfört med erfaren hand och känsla för detaljer.</p>
+
+        <div>
+
+        <a class="button" href="behandlingar.html">Se behandlingar</a>
+        <a class="button" href="bokning.html">Boka en tid</a>
+
+      </div>
+
+    </div>
+
+      <div class="hero-visual"><img src="images/bk2.jpg" alt="Frisör som arbetar med en kunds hår">
+      <div class="hero-note"><strong id="oppet-status"></strong><br>
+      <span>Välkommen in eller boka online</span>
+
+    </div>
+  </div>
+    </section>
+
+    <div class="ticker">
+      <div class="ticker-track">
+
+        <span>Studentrabatter · Pensionärsrabatter · Drop-in ·</span>
+
+        <span>Studentrabatter · Pensionärsrabatter · Drop-in ·</span>
+
+    </div>
+  </div>
+
+</section>
+    </section>
+        <section class="section">
+
+            <div class="visit-grid">
+
+                <!-- Kontaktinformation -->
+
+                <article class="visit-card">
+                    <p class="eyebrow">HÅR Stockholm</p>
+
+                    <h2>Storgatan 12<br>123 45 Stockholm</h2>
+
+                    <!-- Telefon och kontaktlänk -->
+
+                    <p><a>070-123 45 67</a></p>
+
+                    <!-- Öppettider -->
+
+                    <div class="visit-list">
+
+                        <div class="visit-row">
+                            <span>Måndag–fredag</span>
+                            <strong>10–18</strong>
+                        </div>
+
+                        <div class="visit-row">
+                            <span>Lördag</span>
+                            <strong>10–18</strong>
+                        </div>
+
+                        <div class="visit-row">
+                            <span>Söndag</span>
+                            <strong>Stängt</strong>
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Karta -->
+
+                <div class="map-card">
+                    <img src="images/map.png" alt="Karta till Storgatan 12 i Stockholm">
+                    <a class="button" href="https://www.google.com/maps/search/?api=1&query=Storgatan+12+Stockholm" target="_blank">Hitta hit ↗</a>
+                </div>
+
+            </div>
+        </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <strong>HÅR Stockholm</strong>
+        <p>Storgatan 12 · 123 45 Stockholm</p>
+      </div>
+
+      <!-- JavaScript uppdateras från datorns tid för att kolla om salongen har öppet -->
+
+    <div class="footer-copy"><p id="klocka" style="text-align: center;"></p>© 2026 HÅR Stockholm.</div>
+  
+  </div>
+</footer>
+
+</body>
+</html>
+  
