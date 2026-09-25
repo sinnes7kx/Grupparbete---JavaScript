@@ -434,7 +434,19 @@ h1, h2, h3 {
 .footer-inner {
     display: grid;
     grid-template-columns: 1fr auto;
+    align-items: center;
     gap: 24px;
+}
+
+.footer-right {
+    text-align: center;
+}
+
+#klocka {
+    margin-top: 0;
+    margin-bottom: 16px;
+    font-size: 13px;
+    font-weight: bold;
 }
 
 .footer-inner strong {
@@ -449,7 +461,7 @@ h1, h2, h3 {
     border-top: 1px solid var(--muted);
     font-size: 13px;
     font-weight: bold;
-    margin-top: 40px;
+    margin-top: 0;
     cursor: default;
 }
 
