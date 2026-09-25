@@ -12,3 +12,8 @@ Version 0.3:
 - Lagt till box-shadows för header, footer, cards mm. för snyggare och mer stilren design.
 - Fixade bugg med <textarea> där den inte visade placeholder-text.
 - Ändrade öppet/stängt-text via JavaScript. Vid stängt visas nu "Välkommen att boka tid online" och vid öppet visas "Välkommen in eller boka tid online".
+
+Version 0.4:
+- Fixade footer så att tiden visas ovanför linjen vid copyright-texten.
+- Justerade texten på vänster sida i footern.
+- Gjorde footern och headern lite mindre.
