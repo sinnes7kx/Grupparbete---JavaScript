@@ -17,3 +17,4 @@ Version 0.4:
 - Fixade footer så att tiden visas ovanför linjen vid copyright-texten.
 - Justerade texten på vänster sida i footern.
 - Gjorde footern och headern lite mindre.
+- Fixade headern så att den följer med när man scrollar.
