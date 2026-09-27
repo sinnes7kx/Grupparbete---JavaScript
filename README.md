@@ -18,3 +18,8 @@ Version 0.4:
 - Justerade texten på vänster sida i footern.
 - Gjorde footern och headern lite mindre.
 - Fixade headern så att den följer med när man scrollar.
+
+Version 0.5:
+- Rättade till korrekt öppettider i SEO-scriptet.
+- Behandlingar finns nu som menyknapp i headern/navigeringsmenyn.
+- Visar nu stängt på söndagar oavsett tid (Lade till en check för getDay() i JavaScript.
