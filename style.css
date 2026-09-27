@@ -23,7 +23,7 @@
 }
 
 body {
-    margin: 0;
+    margin: 0; /* Tar bort "luft" utanför kanten på alla fyra sidor */
     background: var(--paper);
     color: var(--ink);
     font-family: var(--body-font);
@@ -31,7 +31,7 @@ body {
 }
 
 img {
-    display: block;
+    display: block; /* Visar som ett block, normalt på en egen rad. */
     max-width: 100%;
 }
 
@@ -41,7 +41,7 @@ a {
 }
 
 button, input, textarea {
-    font: inherit;
+    font: inherit; /* Ärver textinställningarna från sin förälder */
 }
 
 h1, h2, h3 {
@@ -53,12 +53,12 @@ h1, h2, h3 {
 .section, .page-hero, .footer-inner {
     width: 92%;
     max-width: 1180px;
-    margin: auto;
+    margin: auto; /* centrerar vågrätt med automatiska sidomarginaler. */
 }
 
 .section, .page-hero {
     padding-top: 40px;
-    padding-right: 10px;
+    padding-right: 10px; 
     padding-bottom: 40px;
     padding-left: 10px;
 }
@@ -71,13 +71,13 @@ h1, h2, h3 {
 }
 
 .site-header {
-    position: sticky;
-    top: 0;
-    z-index: 100;
+    position: sticky; /* Låser header-menyn så att den stannar kvar när användaren scrollar. */
+    top: 0; /* Behövs i samband med 'position: sticky' för att få headern att följa med vid scrollning */
+    z-index: 100; /* Gör så att headern täcker över andra element på sidan istället för att försvinna bakom vissa element */
     max-height: 66px;
     padding: 12px;
-    justify-content: space-between;
-    flex-wrap: nowrap;
+    justify-content: space-between; /* Fördelar ledigt utrymme mellan elementen på raden */
+    flex-wrap: nowrap; /* Håller flex-elementen på en rad. */
     background: var(--ink);
     color: var(--paper-bright);
     box-shadow: 0px 0px 20px var(--ink);
@@ -94,7 +94,7 @@ h1, h2, h3 {
 .main-nav ul, .treatment-list {
     margin: 0;
     padding: 0;
-    list-style: none;
+    list-style: none; /* Tar bort punkterna från listan. */
 }
 
 .main-nav a {
@@ -112,7 +112,7 @@ h1, h2, h3 {
 }
 
 .button, .header-book {
-    display: inline-block;
+    display: inline-block; /* Ligger på textraden men kan ha egen bredd, höjd och padding. */
     padding-top: 12px;
     padding-right: 20px;
     padding-bottom: 12px;
@@ -137,8 +137,8 @@ h1, h2, h3 {
 }
 
 .menu-toggle {
-    display: none;
-    border: 0;
+    display: none; /* Döljer elementet. */
+    border: 0; /* Tar bort kanten. */
     background: none;
     color: var(--paper-bright);
     cursor: pointer;
@@ -148,7 +148,7 @@ h1, h2, h3 {
 .display {
     margin: 0;
     font-size: 80px;
-    line-height: 1.1;
+    line-height: 1.1; /* "Drar ut" storleken vertikalt på startsidan så att den stora texten inte blir ihoptryckt. */
     text-align: center;
 }
 
@@ -164,12 +164,15 @@ h1, h2, h3 {
 
 .lead {
     max-width: 600px;
+
     margin-top: 24px;
-    margin-right: auto;
+    margin-right: auto; /* Låter webbläsaren fördela ledigt utrymme */
     margin-bottom: 24px;
-    margin-left: auto;
+    margin-left: auto; /* Samma som 'margin-right' */
+
     color: var(--muted);
     text-align: center;
+    cursor: default;
 }
 
 .section-title, .copy h2 {
@@ -178,7 +181,7 @@ h1, h2, h3 {
 
 .hero, .split, .section-head, .visit-grid, .field-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr; /* Två kolumner med lika stora delar. */
     gap: 32px;
     align-items: center;
 }
@@ -193,16 +196,15 @@ h1, h2, h3 {
 }
 
 .hero-visual, .map-card {
-    position: relative;
-    align-self: stretch;
+    position: relative; /* Låter innehåll med 'position: absolute' placeras utifrån denna ruta. */
+    align-self: stretch; /* Sträcker elementet för att fylla radens höjd. */
     min-height: 300px;
 }
 
 .hero-visual > img, .map-card > img {
-    position: absolute;
+    position: absolute; /* Placeras utifrån närmaste positionerade förälder. */
     width: 100%;
     height: 100%;
-    object-fit: cover;
 }
 
 .map-card > img {
@@ -228,11 +230,11 @@ h1, h2, h3 {
 }
 
 .hero-note strong, .service-name strong, .service-name span {
-    display: block;
+    display: block; /* Visar texten på en egen rad undertill istället för bredvid. Ungefär som <br> */
 }
 
 .ticker {
-    overflow: hidden;
+    overflow: hidden; /* Begränsar / skär av rutan så den ej stretchar ut hela hemsidan. */
     color: var(--ink);
     background: var(--silver);
     box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
@@ -240,9 +242,9 @@ h1, h2, h3 {
 
 .ticker-track {
     display: flex;
-    width: max-content;
-    padding-left: 100%; /* Börjar från höger sida */
-    animation: ticker 24s linear infinite;
+    width: max-content; /* Håller texten låst på en enda rad istället för att texten staplas ovanpå varandra */
+    padding-left: 100%; /* Gör så att den animerade texten börjar från allra längst till höger. Hade det varit 50% så hade texten startat från mitten av sidan. */
+    animation: ticker 24s linear infinite; /* Kör animationen i 24 sekunder innan den börjar om. 'infinite' gör att det loopar förevigt, 'linear' håller den linjär */
 }
 
 .ticker-track span {
@@ -258,18 +260,15 @@ h1, h2, h3 {
 }
 
 @keyframes ticker {
-    from {
-        transform: translateX(0); /* Loopar om när texten åkt hela vägen till vänster */
-    }
     to {
-        transform: translateX(-100%);
+        transform: translateX(-100%); /* Flyttar texten åt vänster. */
     }
 }
 
 /* Kort, bilder och information */
 .values-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr; /* Tre kolumner med lika stora delar. */
     gap: 16px;
 }
 
@@ -278,13 +277,13 @@ h1, h2, h3 {
     border: 1px solid var(--line);
     border-radius: 16px;
     background: var(--paper-bright);
-    overflow: hidden;
+    overflow: hidden; /* Döljer innehåll som sticker ut utanför rutorna. */
     transition: var(--smooth);
     box-shadow: inset 0 0 10px var(--silver);
 }
 
 .value-card:hover {
-    transform: translateY(-5px)
+    transform: translateY(-5px) /* Flyttar elementet 5px uppåt. */
 }
 
 .visit-card, .booking-summary {
@@ -308,7 +307,7 @@ h1, h2, h3 {
 /* Behandlingar och bokning */
 .treatment {
     display: grid;
-    grid-template-columns: 1fr 100px 140px;
+    grid-template-columns: 1fr 100px 140px; /* Flexibel textkolumn. '100px' för "tid" och '140px' för "pris" */
     gap: 16px;
     align-items: center;
     padding-top: 20px;
@@ -346,14 +345,14 @@ h1, h2, h3 {
 
 .booking-shell {
     display: grid;
-    grid-template-columns: 1fr 330px;
+    grid-template-columns: 1fr 330px; /* Två kolumner, högerkolumnen är 330px. */
     gap: 24px;
     align-items: start;
 }
 
 .service-option {
     display: grid;
-    grid-template-columns: auto 1fr auto;
+    grid-template-columns: auto 1fr auto; /* Ytterkolumner efter innehållet. Mitten får ledigt utrymme. */
     gap: 16px;
     align-items: center;
     margin-bottom: 12px;
@@ -372,7 +371,7 @@ h1, h2, h3 {
 .service-option input {
     width: 20px;
     height: 20px;
-    accent-color: var(--silver);
+    accent-color: var(--silver); /* Färg på radioknappens markering. */
 }
 
 .summary-row, .visit-row {
@@ -394,7 +393,7 @@ h1, h2, h3 {
 /* Kontakt och sidfot */
 .form-card {
     max-width: 768px;
-    margin: auto;
+    margin: auto; /* Centrerar vågrätt med automatiska sidomarginaler. */
 }
 
 .field {
@@ -414,7 +413,7 @@ h1, h2, h3 {
 }
 
 .field textarea {
-    resize: none;
+    resize: none; /* Hindrar användaren från att ändra textrutans storlek. */
 }
 
 .form-status, .booking-message {
@@ -433,7 +432,7 @@ h1, h2, h3 {
 
 .footer-inner {
     display: grid;
-    grid-template-columns: 1fr auto;
+    grid-template-columns: 1fr auto; /* Vänsterkolumnen får ledigt utrymme, höger följer innehållet. */
     align-items: center;
     gap: 24px;
 }
@@ -467,18 +466,20 @@ h1, h2, h3 {
 
 /* Mobil och surfplatta */
 
+/* Reglerna nedan gäller när fönstret är högst 1000px brett. */
+
 @media (max-width: 1000px) {
     .menu-toggle {
         display: block;
     }
 
     .header-book, .main-nav {
-        display: none;
+        display: none; /* Döljer elementet. */
     }
 
     .main-nav {
         position: absolute;
-        top: 100%;
+        top: 100%; /* Placerar mobilmenyn direkt under förälderns höjd. */
         left: 0;
         width: 100%;
         background: var(--ink);
@@ -490,13 +491,15 @@ h1, h2, h3 {
     }
 
     .hero, .split, .section-head, .visit-grid, .booking-shell {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* En kolumn; innehållet staplas på höjden. */
     }
 
     .display {
         font-size: 60px;
     }
 }
+
+/* Reglerna nedan gäller när fönstret är högst 700px brett. */
 
 @media (max-width: 700px) {
     .values-grid, .field-grid, .footer-inner {
@@ -523,14 +526,12 @@ h1, h2, h3 {
     }
 
     .treatment > div {
-        /* Börja i första kolumnen och täck båda kolumnerna. */
-        grid-column-start: 1;
-        grid-column-end: span 2;
+        grid-column-start: 1; /* Börjar i kolumn 1 */
+        grid-column-end: span 2; /* Elementet täcker två kolumner. */
     }
 
     .service-price {
-        /* Placera priset i andra kolumnen. */
-        grid-column-start: 2;
+        grid-column-start: 2; /* Börjar i kolumn 2 och placerar priset i andra kolumnen. */
     }
 
     .hero-visual, .map-card {
