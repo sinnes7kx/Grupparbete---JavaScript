@@ -23,3 +23,9 @@ Version 0.5:
 - Rättade till korrekt öppettider i SEO-scriptet.
 - Behandlingar finns nu som menyknapp i headern/navigeringsmenyn.
 - Visar nu stängt på söndagar oavsett tid (Lade till en check för getDay() i JavaScript.
+
+Version 1.0 (Final):
+- Småjusteringar för bättre användarupplevelse.
+- Gjorde telefonnumret mer synligt på framsidan.
+- Lade till telefonnummer på Kontakt-sidan.
+- Ticker-texten (scrollande texten) stoppar nu animationen vid mouseover.
