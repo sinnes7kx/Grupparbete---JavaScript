@@ -83,6 +83,11 @@ $(function () {
     // Alla fält som ska kontrolleras.
     var alltFalt = $("#name, #email, #phone, #subject, #message");
 
+    // Kontrollera ett fält när användaren lämnar det ("blur").
+    alltFalt.on("blur", function () {
+        kontrolleraFalt(this);
+    });
+
     // Ta bort felet direkt när användaren börjar rätta ett fält som var fel.
     alltFalt.on("input change", function () {
         if ($(this).hasClass("fel")) {
