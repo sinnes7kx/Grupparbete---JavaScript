@@ -211,7 +211,9 @@ h1, h2, h3 {
 .map-card > img {
     width: 100%;
     height: 100%;
+
     object-fit: cover;
+    opacity: .75;
     transition: 1.66s ease;
 }
 
