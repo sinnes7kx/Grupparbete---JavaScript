@@ -325,6 +325,7 @@ h1, h2, h3 {
     font-weight: 400; 
     text-align: left;
     color: var(--silver);
+    cursor: default;
 }
 
 /* Behandlingar och bokning */
