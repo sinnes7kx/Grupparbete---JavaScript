@@ -30,3 +30,4 @@ Version 1.0 (Final):
 - Lade till telefonnummer på kontakt-sidan.
 - Ticker-texten (scrollande texten) stoppar nu animationen vid mouseover.
 - Vid mouseover på Google maps-rutan zoomar den nu in.
+- Gjorde maps-bilden lite mindre transparent för snyggare design.
