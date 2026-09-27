@@ -25,7 +25,7 @@ Version 0.5:
 - Visar nu stängt på söndagar oavsett tid (Lade till en check för getDay() i JavaScript.
 
 Version 1.0 (Final):
-- Småjusteringar för bättre användarupplevelse.
+Småjusteringar för bättre användarupplevelse:
 - Gjorde telefonnumret mer synligt på framsidan.
-- Lade till telefonnummer på Kontakt-sidan.
+- Lade till telefonnummer på kontakt-sidan.
 - Ticker-texten (scrollande texten) stoppar nu animationen vid mouseover.
