@@ -259,6 +259,10 @@ h1, h2, h3 {
     cursor: default;
 }
 
+.ticker:hover .ticker-track {
+    animation-play-state: paused; /* Pausar animationen vid hover  */
+}
+
 @keyframes ticker {
     to {
         transform: translateX(-100%); /* Flyttar texten åt vänster. */
