@@ -40,6 +40,20 @@ function skickaMeddelande() {
     return false;
 }
 
+// Räknar ut när salongen öppnar nästa gång. Används när det är stängt.
+function narViOppnar(dag, timme) {
+    var sunday = 0;
+    var lordag = 6;
+
+    if (dag !== sunday && timme < 10) {
+        return "idag kl. 10:00"; // Tidig morgon måndag–lördag.
+    }
+    if (dag === lordag || dag === sunday) {
+        return "måndag kl. 10:00"; // Lördag kväll eller söndag.
+    }
+    return "imorgon kl. 10:00"; // Kväll måndag–fredag.
+}
+
 // Klocka längst ner i höger hörn på sidorna. Kontrollerar öppet-status på framsidan.
 function uppdateraKlocka() {
     var nu = new Date();
@@ -61,7 +75,7 @@ function uppdateraKlocka() {
             status.textContent = "ÖPPET – vi stänger kl. 18:00";
             statustext.textContent = "Välkommen in eller boka tid online";
         } else {
-            status.textContent = "STÄNGT - vi öppnar kl. 10:00";
+            status.textContent = "STÄNGT – vi öppnar " + narViOppnar(dag, timme);
             statustext.textContent = "Välkommen att boka tid online";
         }
     }
