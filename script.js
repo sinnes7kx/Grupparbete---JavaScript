@@ -61,7 +61,7 @@ function uppdateraKlocka() {
             status.textContent = "ÖPPET – vi stänger kl. 18:00";
             statustext.textContent = "Välkommen in eller boka tid online";
         } else {
-            status.textContent = "STÄNGT - vi öppnar kl. 10.00";
+            status.textContent = "STÄNGT - vi öppnar kl. 10:00";
             statustext.textContent = "Välkommen att boka tid online";
         }
     }
