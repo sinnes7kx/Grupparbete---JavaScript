@@ -30,7 +30,7 @@ function kontrolleraBokning() {
         meddelande.textContent = "Du har valt " + behandling + ". Detta är ett skolprojekt. Ingen bokning har gjorts.";
     }
 
-    // return false stoppar formuläret från att skickas.
+// return false stoppar formuläret från att skickas.
     return false;
 }
 
@@ -43,23 +43,25 @@ function skickaMeddelande() {
 // Klocka längst ner i höger hörn på sidorna. Kontrollerar öppet-status på framsidan.
 function uppdateraKlocka() {
     var nu = new Date();
+    var sunday = 0;
+    var dag = nu.getDay(); // 0 = Söndag då "getDay" returnerar ett nummer.
     var timme = nu.getHours();
     var klocka = document.getElementById("klocka");
     var status = document.getElementById("oppet-status");
     var statustext = document.getElementById("status-text");
 
-    // Visa lokala tiden som hämtas från användarens dator.
+// Visa lokala tiden som hämtas från användarens dator.
     if (klocka) {
         klocka.textContent = nu.toLocaleTimeString("sv-SE");
     }
 
-    // Visar öppet före kl. 18:00 i hero-note på sidans framsida, annars visas stängt.
+// Visar öppet före kl. 18:00 i hero-note på sidans framsida, annars visas stängt.
     if (status) {
-        if (timme < 18 && timme > 10) {
-            status.textContent = "Öppet – vi stänger kl. 18:00";
+        if (dag !== sunday && timme >= 10 && timme < 18) { // Kollar så att klockan är över/exakt kl. 10:00 och under 18:00 samt stängt på söndagar.
+            status.textContent = "ÖPPET – vi stänger kl. 18:00";
             statustext.textContent = "Välkommen in eller boka tid online";
         } else {
-            status.textContent = "Stängt, vi öppnar kl. 10.00";
+            status.textContent = "STÄNGT - vi öppnar kl. 10.00";
             statustext.textContent = "Välkommen att boka tid online";
         }
     }
