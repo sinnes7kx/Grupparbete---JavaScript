@@ -308,6 +308,13 @@ h1, h2, h3 {
     transform: translateY(-5px);
 }
 
+.phone-number {
+    font-size: large; 
+    font-weight: 400; 
+    text-align: left;
+    color: var(--silver);
+}
+
 /* Behandlingar och bokning */
 .treatment {
     display: grid;
