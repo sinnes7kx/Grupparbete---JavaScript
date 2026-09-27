@@ -13,6 +13,7 @@
     <link rel="icon" href="images/favicon.png">
 
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="kontakt.css"> <!-- Björns stilar för formulär och FAQ -->
     <script src="script.js"></script>
 
 <!-- SEO -->
@@ -100,7 +101,8 @@
         <!-- Kontaktformulär -->
 
         <section class="section" style="padding-top: 0">
-            <form class="form-card" onsubmit="return skickaMeddelande()">
+            <!-- novalidate: webbläsarens egna pop-ups stängs av, kontakt.js visar egna felmeddelanden i stället -->
+            <form class="form-card" id="kontaktformular" novalidate>
 
                 <!-- Namn och e-post -->
 
@@ -120,6 +122,8 @@
                             autocomplete="name"
                             placeholder="Ditt namn"
                             required>
+
+                        <span class="felmeddelande" aria-live="polite"></span>
                     </div>
 
 
@@ -136,6 +140,47 @@
                             autocomplete="email"
                             placeholder="namn@exempel.se"
                             required>
+
+                        <span class="felmeddelande" aria-live="polite"></span>
+                    </div>
+
+                </div>
+
+
+                <!-- Telefon och ärende -->
+
+                <div class="field-grid">
+
+                    <!-- Telefon (valfritt) -->
+
+                    <div class="field">
+                        <label for="phone">Telefon <span class="valfritt">(valfritt)</span></label>
+
+                        <input
+                            id="phone"
+                            type="tel"
+                            name="phone"
+                            autocomplete="tel"
+                            placeholder="070-123 45 67">
+
+                        <span class="felmeddelande" aria-live="polite"></span>
+                    </div>
+
+
+                    <!-- Ärende -->
+
+                    <div class="field">
+                        <label for="subject">Ärende</label>
+
+                        <select id="subject" name="subject" required>
+                            <option value="">Välj ärende</option>
+                            <option value="behandling">Fråga om behandling</option>
+                            <option value="bokning">Min bokning</option>
+                            <option value="produkter">Produkter</option>
+                            <option value="ovrigt">Övrigt</option>
+                        </select>
+
+                        <span class="felmeddelande" aria-live="polite"></span>
                     </div>
 
                 </div>
@@ -151,8 +196,12 @@
                         id="message"
                         name="message"
                         rows="7"
+                        maxlength="500"
                         placeholder="Vad kan vi hjälpa dig med?"
                         required></textarea>
+
+                    <span class="teckenraknare" id="teckenraknare">0 / 500 tecken</span>
+                    <span class="felmeddelande" aria-live="polite"></span>
 
                 </div>
 
@@ -162,9 +211,84 @@
 
                 <!-- Statusmeddelande från JavaScript -->
 
-                <p class="form-status" id="kontaktmeddelande"></p>
+                <p class="form-status" id="kontaktmeddelande" aria-live="polite"></p>
 
             </form>
+        </section>
+
+
+        <!-- Vanliga frågor (FAQ). Svaren fälls ut med jQuery i kontakt.js -->
+
+        <section class="section faq" aria-labelledby="faq-rubrik">
+
+            <h2 id="faq-rubrik">Vanliga frågor</h2>
+
+            <div class="faq-lista">
+
+                <div class="faq-item">
+                    <button class="faq-fraga" type="button" aria-expanded="false">Vilka öppettider har ni?</button>
+                    <div class="faq-svar">
+                        <p>Vi har öppet måndag till lördag kl. 10.00–18.00. På söndagar har vi stängt, men du kan boka tid online dygnet runt.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-fraga" type="button" aria-expanded="false">Kan jag komma utan att ha bokat tid?</button>
+                    <div class="faq-svar">
+                        <p>Ja, vi tar emot drop-in när det finns en ledig stol. Vill du vara säker på att få en tid är det bäst att <a href="bokning.html"><u>boka i förväg</u></a>.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-fraga" type="button" aria-expanded="false">Har ni några rabatter?</button>
+                    <div class="faq-svar">
+                        <p>Ja, studenter och pensionärer får rabatt. Visa giltig legitimation eller ditt studentkort när du betalar.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-fraga" type="button" aria-expanded="false">Varför står det "från" vid vissa priser?</button>
+                    <div class="faq-svar">
+                        <p>Priset för slingor och balayage beror på hur långt och tjockt håret är och hur mycket färg som går åt. Din frisör går igenom det slutliga priset med dig innan behandlingen börjar, så att du aldrig blir överraskad.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-fraga" type="button" aria-expanded="false">Hur förbereder jag mig inför besöket?</button>
+                    <div class="faq-svar">
+                        <p>Kom gärna med håret som du brukar ha det till vardags, så ser frisören hur det faller naturligt. Har du bilder på en frisyr du gillar får du gärna ta med dem. Inför en färgbehandling är det bra att berätta om du har färgat håret hemma.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-fraga" type="button" aria-expanded="false">Jag har glömt vilken tid jag bokade. Vad gör jag?</button>
+                    <div class="faq-svar">
+                        <p>Ring oss på 070-123 45 67 eller skriv i formuläret ovan och välj ärendet "Min bokning", så hjälper vi dig.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-fraga" type="button" aria-expanded="false">Hur avbokar eller ändrar jag min tid?</button>
+                    <div class="faq-svar">
+                        <p>Hör av dig senast 24 timmar innan din tid, via telefon eller formuläret ovan. Då kan vi erbjuda tiden till någon annan.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-fraga" type="button" aria-expanded="false">Vad gör jag om jag inte är nöjd?</button>
+                    <div class="faq-svar">
+                        <p>Hör av dig inom en vecka så bokar vi in en kostnadsfri justering. Vi vill att du ska trivas med ditt hår även när du har gått hem.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-fraga" type="button" aria-expanded="false">Vilka betalsätt tar ni?</button>
+                    <div class="faq-svar">
+                        <p>Du kan betala med kort eller Swish i salongen.</p>
+                    </div>
+                </div>
+
+            </div>
         </section>
 
     </main>
@@ -190,6 +314,10 @@
 
     </div>
 </footer>
+
+<!-- jQuery hämtas från jQuerys CDN och måste laddas före kontakt.js -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="kontakt.js"></script>
 
 </body>
 </html>

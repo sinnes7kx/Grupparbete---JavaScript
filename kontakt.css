@@ -1,0 +1,128 @@
+/* kontakt.css – Björns tillägg till kontaktsidan.
+   Stilar för formulärvalidering och FAQ-sektionen.
+   Använder samma variabler (--ink, --line osv.) som style.css. */
+
+/* ---------- Formulärvalidering ---------- */
+
+/* Rullgardinsmenyn får samma utseende som de andra fälten. */
+.field select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--silver-dark);
+    border-radius: 12px;
+    background: var(--paper-bright);
+    font: inherit;
+}
+
+/* Fält som är fel får röd ram. Klassen "fel" sätts av kontakt.js. */
+.field input.fel, .field textarea.fel, .field select.fel {
+    border-color: #b3261e;
+    background: #fdf3f2;
+}
+
+/* Texten under ett fält som är fel. */
+.felmeddelande {
+    display: block;
+    min-height: 20px; /* Håller platsen så att sidan inte hoppar när texten dyker upp. */
+    margin-top: 4px;
+    color: #b3261e;
+    font-size: 14px;
+}
+
+/* "(valfritt)" efter en etikett. */
+.valfritt {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+/* Teckenräknaren under meddelandet. */
+.teckenraknare {
+    display: block;
+    margin-top: 4px;
+    color: var(--muted);
+    font-size: 14px;
+    text-align: right;
+}
+
+/* Grönt statusmeddelande när formuläret är korrekt ifyllt. */
+.form-status {
+    color: #b3261e;
+}
+
+.form-status.lyckat {
+    color: #2e6b3a;
+}
+
+
+/* ---------- FAQ ---------- */
+
+.faq {
+    max-width: 768px;
+    margin: auto; /* Centrerar sektionen, precis som formuläret. */
+}
+
+.faq h2 {
+    font-size: 40px;
+    margin-bottom: 24px;
+}
+
+.faq-lista {
+    border-top: 1px solid var(--line);
+}
+
+.faq-item {
+    border-bottom: 1px solid var(--line);
+}
+
+/* Frågan är en knapp, så att den går att använda med tangentbordet (Tab + Enter). */
+.faq-fraga {
+    display: flex;
+    justify-content: space-between; /* Frågan till vänster, plustecknet till höger. */
+    align-items: center;
+    width: 100%;
+    padding: 18px 4px;
+    border: none;
+    background: none;
+    color: var(--ink);
+    font-size: 18px;
+    text-align: left;
+    cursor: pointer;
+}
+
+.faq-fraga:hover {
+    color: var(--nav-hover);
+}
+
+/* Plustecknet skapas med ::after och vrids till ett kryss när frågan är öppen. */
+.faq-fraga::after {
+    content: "+";
+    margin-left: 16px;
+    font-size: 24px;
+    transition: transform .25s ease;
+}
+
+.faq-fraga[aria-expanded="true"]::after {
+    transform: rotate(45deg);
+}
+
+/* Svaren är dolda från början. jQuery visar dem med slideToggle(). */
+.faq-svar {
+    display: none;
+    padding: 0 4px 18px;
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+.faq-svar p {
+    margin: 0;
+}
+
+@media (max-width: 700px) {
+    .faq h2 {
+        font-size: 32px;
+    }
+
+    .faq-fraga {
+        font-size: 16px;
+    }
+}
