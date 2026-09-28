@@ -1,4 +1,4 @@
-Grupparbete av Daniel, Björn & Rattana.
+<h1>Grupparbete av Daniel, Björn & Rattana.</h1>
 
 Hårsalong med JavaScript, HTML & CSS.
 
