@@ -1,6 +1,6 @@
 <h1>Grupparbete av Daniel, Björn & Rattana.</h1>
 
-Hårsalong med JavaScript, HTML & CSS.
+<h3>Hårsalong med JavaScript, HTML & CSS.</h3>
 
 <a href="https://sinnes7kx.github.io/Grupparbete---JavaScript/" style="text-decoration: none;">Länk till hemsidan</a>
 
