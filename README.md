@@ -22,7 +22,7 @@ https://sinnes7kx.github.io/Grupparbete---JavaScript/
 <b>Version 0.5:</b>
 - Rättade till korrekt öppettider i SEO-scriptet.
 - Behandlingar finns nu som menyknapp i headern/navigeringsmenyn.
-- Visar nu stängt på söndagar oavsett tid (Lade till en check för getDay() i JavaScript.
+- Visar nu stängt på söndagar oavsett tid (Lade till en check för getDay() i JavaScript).
 
 <b>Version 1.0 (Final):</b>
 - Småjusteringar för bättre användarupplevelse:
