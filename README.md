@@ -2,7 +2,7 @@
 
 Hårsalong med JavaScript, HTML & CSS.
 
-https://sinnes7kx.github.io/Grupparbete---JavaScript/
+<a href="https://sinnes7kx.github.io/Grupparbete---JavaScript/">Länk till hemsidan</a>
 
 
 <b>Version 0.2:</b>
